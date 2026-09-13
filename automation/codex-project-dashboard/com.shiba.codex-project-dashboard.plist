@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shiba.codex-project-dashboard</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/python3</string>
+    <string>/Users/shiba/Documents/codex/projects/automation/codex-project-dashboard/dashboard_server.py</string>
+    <string>--host</string>
+    <string>0.0.0.0</string>
+    <string>--port</string>
+    <string>8791</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/shiba/Documents/codex/projects/automation/codex-project-dashboard</string>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>KeepAlive</key>
+  <dict>
+    <key>SuccessfulExit</key>
+    <false/>
+  </dict>
+
+  <key>ThrottleInterval</key>
+  <integer>5</integer>
+
+  <key>StandardOutPath</key>
+  <string>/Users/shiba/Documents/codex/projects/automation/codex-project-dashboard/dashboard.out.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/shiba/Documents/codex/projects/automation/codex-project-dashboard/dashboard.err.log</string>
+</dict>
+</plist>

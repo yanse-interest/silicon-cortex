@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChatGPT Daily Report"
+  short_description: "归档 ChatGPT 日报/认知周报，并运行候选、晋升、审计与月报闭环"
+  default_prompt: "Use $chatgpt-daily-report to ingest this daily report or Weekly Review, validate structured candidates, audit Cognitive Observatory indexes when relevant, and apply the appropriate daily, Review Cycle, or monthly deposition rules."

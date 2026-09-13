@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Memory Maintainer"
+  short_description: "Audit and maintain shared Obsidian memory"
+  default_prompt: "Use $codex-memory-maintainer to audit and maintain the shared Obsidian Codex Memory vault."
