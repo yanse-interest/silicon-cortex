@@ -8,6 +8,7 @@ Silicon Cortex 是一套本地优先的个人知识沉淀系统。它把 ChatGPT
 - `codex-skills/codex-memory-maintainer/`：Obsidian Memory 的索引、审计和受治理写入工具。
 - `automation/codex-project-dashboard/`：项目 registry、证据门禁、快照生成和本地管理服务。
 - `automation/codex-project-dashboard-h5/`：移动端只读 H5 与本地只读网关。
+- [`automation/codex-workbench/`](automation/codex-workbench/README.md)：macOS/Windows 本地项目工作台，以各项目 `PROJECT_MAP.md` 为业务状态来源。
 
 ## 数据边界
 
