@@ -116,7 +116,7 @@ class WorkbenchWebTests(unittest.TestCase):
         self.assertEqual(200, status); self.assertEqual(0, revisions["model_calls"])
         self.assertEqual({"ready-project", "missing-project", "second-project"}, {row["project_id"] for row in revisions["revisions"]})
         regression = subprocess.run(["node", str(Path(__file__).with_name("ui_regression.mjs"))],
-                                    input=APP_JS, text=True, capture_output=True, check=False)
+                                    input=APP_JS, text=True, encoding="utf-8", capture_output=True, check=False)
         self.assertEqual(0, regression.returncode, regression.stderr)
 
     def test_management_preview_apply_archive_restore_remove_needs_token_and_preserves_map(self) -> None:

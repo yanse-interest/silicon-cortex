@@ -80,7 +80,7 @@ class M3StoreAcceptanceTests(unittest.TestCase):
                 if calls == 2: os._exit(92)
                 return original(source, target)
             workbench.os.replace = crash_on_map
-            workbench.Store(Path(sys.argv[1])).update(json.loads(Path(sys.argv[2]).read_text()))
+            workbench.Store(Path(sys.argv[1])).update(json.loads(Path(sys.argv[2]).read_text(encoding="utf-8")))
         """)
         self.assertEqual(92, code)
         self.assertEqual(before, self.map_path.read_bytes())
@@ -102,7 +102,7 @@ class M3StoreAcceptanceTests(unittest.TestCase):
                     if directory_syncs == 2: os._exit(93)
                 return original(fd)
             workbench.os.fsync = crash_after_second_replace
-            workbench.Store(Path(sys.argv[1])).update(json.loads(Path(sys.argv[2]).read_text()))
+            workbench.Store(Path(sys.argv[1])).update(json.loads(Path(sys.argv[2]).read_text(encoding="utf-8")))
         """)
         self.assertEqual(93, code)
         restored = parse_map(self.map_path.read_bytes())
