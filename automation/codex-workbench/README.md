@@ -4,10 +4,11 @@
 state block in a project's `PROJECT_MAP.md`. It does not call the old
 Dashboard, ports 8791/8792, LAN/Sites, account router, or any task executor.
 
-On Windows, use [README-WINDOWS.md](README-WINDOWS.md) for native Python setup
-and the local start script. The workbench works with the user's own project
-files; this repository does not include another person's private registry,
-project maps, Codex sessions, or quota cache.
+The same Python core runs on macOS and Windows. Use
+[README-MACOS.md](README-MACOS.md) or [README-WINDOWS.md](README-WINDOWS.md)
+for platform setup. The workbench uses each person's own project files; this
+repository does not include private registries, project maps, Codex sessions,
+or quota caches.
 
 The private `--data-dir` holds only bindings, per-project locks and the most
 recent valid backup. It must not be committed or served. A map remains the

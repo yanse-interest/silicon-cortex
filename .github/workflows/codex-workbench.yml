@@ -1,0 +1,38 @@
+name: Codex Workbench macOS and Windows
+
+on:
+  push:
+    paths:
+      - .github/workflows/codex-workbench.yml
+      - automation/codex-workbench/**
+  pull_request:
+    paths:
+      - .github/workflows/codex-workbench.yml
+      - automation/codex-workbench/**
+
+permissions:
+  contents: read
+
+jobs:
+  workbench:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run workbench tests
+        run: python -m unittest discover -s automation/codex-workbench/tests -v
+      - name: Validate macOS service scripts
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          for script in automation/codex-workbench/bin/*.sh; do zsh -n "$script"; done
+          zsh automation/codex-workbench/bin/workbench-install-service.sh --render-only "$RUNNER_TEMP/codex-workbench.plist"
+          plutil -lint "$RUNNER_TEMP/codex-workbench.plist"
